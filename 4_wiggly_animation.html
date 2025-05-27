@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 75px;
+            width: 250px;
+            background-color: lavender;
+            border-radius: 16px;
+            box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.4), 17px 17px 6px rgba(0, 0, 0, 0.4);
+            animation: wiggle 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes wiggle {
+            0% {
+                transform: rotateZ(0deg) rotateX(0deg);
+            }
+
+            12.5% {
+                transform: rotateZ(5deg) rotateX(30deg);
+            }
+
+            25% {
+                transform: rotateZ(-5deg) rotateX(-30deg);
+            }
+
+            37.5% {
+                transform: rotateZ(5deg) rotateX(30deg);
+            }
+
+            50% {
+                transform: rotateZ(-5deg) rotateX(-30deg);
+            }
+
+            62.5% {
+                transform: rotateZ(5deg) rotateX(30deg);
+            }
+
+            75% {
+                transform: rotateZ(-5deg) rotateX(-30deg);
+            }
+
+            87.5% {
+                transform: rotateZ(5deg) rotateX(30deg);
+            }
+
+            100% {
+                transform: rotateZ(-5deg) rotateX(-30deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
