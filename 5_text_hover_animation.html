@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,17 @@
             box-sizing: border-box;
         }
 
-        body{
+        body {
             height: 100dvh;
             margin: 0;
             overflow: hidden;
             background-color: black;
             display: flex;
             align-items: center;
-            justify-content: center;  
+            justify-content: center;
         }
 
-        .box{
+        .box {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -32,23 +33,48 @@
             position: relative;
         }
 
-        .box::before{
+        .box::before {
             content: '';
             position: absolute;
-            height: 50%;
+            height: 25%;
             width: 100%;
-            border: 1px solid white;
             border-radius: 50%;
-            background-image: linear-gradient(circle, rgba(0, 200, 255, 0.6), transparent);
-            z-index: 2;
+            background:
+                radial-gradient(circle, rgba(0, 200, 255, 0.6), transparent),
+                radial-gradient(circle, rgba(255, 0, 150, 0.6), transparent);
+            z-index: -1;
+            transform: scale(0);
+            transition: transform .5s;
         }
 
-        .box:hover{
+        .box:hover {
             transform: scale(1.2);
+        }
+
+        .box:hover:before {
+            animation: burst 1s ease-in 1 normal;
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(0);
+            }
+
+            90% {
+                transform: scale(1.5);
+
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="box">Hover Me!</div>
 </body>
+
 </html>
