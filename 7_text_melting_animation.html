@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        h1 {
+            position: relative;
+            animation: melt 3s ease-in-out infinite alternate;
+        }
+
+        h1::after {
+            content: "MELTING";
+            position: absolute;
+            left: 0;
+            right: 0;
+            animation: drip 3s ease-in-out infinite alternate;
+        }
+
+        h1,
+        h1::after {
+            font-size: 80px;
+            color: transparent;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        @keyframes melt {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: scaleY(1.5);
+                opacity: .7;
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes drip {
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scaleY(1.5);
+                opacity: .7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MELTING</h1>
+</body>
+
+</html>
